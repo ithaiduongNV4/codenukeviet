@@ -1,0 +1,48 @@
+<!-- BEGIN: submenu -->
+<ul class="dropdown-menu">
+	<!-- BEGIN: loop -->
+    <li <!-- BEGIN: submenu -->class="dropdown-submenu"<!-- END: submenu -->>
+        <!-- BEGIN: icon -->
+        <img src="{SUBMENU.icon}" />&nbsp;
+        <!-- END: icon -->
+        <a href="{SUBMENU.link}" title="{SUBMENU.note}" {SUBMENU.target}>{SUBMENU.title_trim}</a>
+        <!-- BEGIN: item -->
+        {SUB}
+        <!-- END: item -->
+    </li>
+    <!-- END: loop -->
+</ul>
+<!-- END: submenu -->
+<!-- BEGIN: main -->
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			<span class="sr-only">Kế toán Niềm Tin</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+	</div>
+	<div class="collapse navbar-collapse" id="menu-site-default">
+		<ul class="nav navbar-nav">
+			<li>
+				<a class="home" title="{LANG.Home}" href="{THEME_SITE_HREF}">{LANG.Home}</a>
+			</li>
+			<!-- BEGIN: top_menu -->
+			<li {TOP_MENU.current} rol="presentation">
+				<a class="dropdown-toggle" {TOP_MENU.dropdown_data_toggle} href="{TOP_MENU.link}" role="button" aria-expanded="false" title="{TOP_MENU.note}" {TOP_MENU.target}>{TOP_MENU.title_trim}<!-- BEGIN: has_sub --> <strong class="caret">&nbsp;</strong><!-- END: has_sub --></a>
+				<!-- BEGIN: sub -->
+				{SUB}
+				<!-- END: sub -->
+			</li>
+			<!-- END: top_menu -->
+		</ul>
+	</div>
+</nav>
+<script type="text/javascript" data-show="after">
+$(function(){
+    checkWidthMenu();
+    $(window).resize(checkWidthMenu);
+});
+</script>
+<!-- END: main -->
